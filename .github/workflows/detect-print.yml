@@ -15,7 +15,5 @@ jobs:
     - name: Detect print statements
       run: |
         set -e
-        echo $PWD
-        echo $USER
         folder="."
         find $folder -type f -name "*.py" -exec grep -Hn "print" {} +
