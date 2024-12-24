@@ -1,1 +1,1 @@
-# my-github-action-practice
+# My GitHub Actions Practice
