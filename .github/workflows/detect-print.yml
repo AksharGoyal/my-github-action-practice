@@ -1,0 +1,20 @@
+name: Detect Logging in Custom Extractor
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  detect-logging:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Detect print statements
+      run: |
+        echo $PWD
+        echo $USER
+        folder="."
+        find $folder -type f -name "*.py" -exec grep -Hn "print" {} +
