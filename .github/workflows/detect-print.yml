@@ -20,6 +20,8 @@ jobs:
             - 'house-spiders/**/*.py'
             
     - name: Detect print statements
+      if: steps.changes.outputs.housespiders == 'true'
+      working-directory: ./house-spiders
       run: |
         if grep -rn "print" --include='*.py' .; then
           echo "Print statements found!"
@@ -27,6 +29,8 @@ jobs:
         fi
 
     - name: Detect open() statements
+      if: steps.changes.outputs.housespiders == 'true'
+      working-directory: ./house-spiders
       run: |
         if grep -rn "with open" --include='*.py' .; then
           echo "logging into file statements found!"
