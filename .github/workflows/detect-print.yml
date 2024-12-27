@@ -18,3 +18,4 @@ jobs:
           echo "Print or logging statements found!"
           exit 1
         fi
+      shell: bash
