@@ -1,7 +1,6 @@
 name: Detect Logging in Custom Extractor
 
 on:
-  pull
   push:
     branches: ["master", "main"]
     paths:
