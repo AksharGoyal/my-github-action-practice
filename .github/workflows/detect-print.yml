@@ -14,8 +14,13 @@ jobs:
       uses: actions/checkout@v2
     - name: Detect print statements
       run: |
-        if grep -rn --include='*.py' 'print|open' .; then
-          echo "Print or logging statements found!"
+        if grep -rn "print" --include='*.py' .; then
+          echo "print statements found!"
           exit 1
         fi
-      shell: bash
+    - name: Detect file statements
+      run: |
+        if grep -rn "with open" --include='*.py' .; then
+          echo "print statements found!"
+          exit 1
+        fi
