@@ -1,4 +1,4 @@
 def housespider():
-    pass
+    return "housespiders"
 
 print("HOUSESPIDER")
