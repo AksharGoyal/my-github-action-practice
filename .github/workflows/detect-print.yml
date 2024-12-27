@@ -2,9 +2,9 @@ name: Detect Logging in Custom Extractor
 
 on:
   push:
-    branches: [main, master]
+    branches: [master]
   pull_request:
-    branches: [main, master]
+    branches: [master]
 
 jobs:
   detect-logging:
@@ -12,6 +12,15 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Filter for house-spider changes
+      uses: dorny/paths-filter@v3
+      id: changes
+      with:
+        filters: |
+          housespiders:
+            - 'house-spiders/**/*.py'
+            
     - name: Detect print statements
       run: |
         if grep -rn --include='*.py' 'print|open' .; then
