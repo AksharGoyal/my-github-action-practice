@@ -3,3 +3,4 @@ def housespider():
 
     with open('world.txt', 'w') as f:
         f.write("WORLD")
+    print('print')
