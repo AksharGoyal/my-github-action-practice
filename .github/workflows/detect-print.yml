@@ -1,8 +1,9 @@
 name: Detect Logging in Custom Extractor
 
 on:
+  pull
   push:
-    branches: [master]
+    branches: ["master", "main"]
     paths:
       - 'house-spiders/**'
 jobs:
