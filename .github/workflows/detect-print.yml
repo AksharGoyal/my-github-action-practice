@@ -26,7 +26,7 @@ jobs:
           exit 1
         fi
 
-    - name: Detect file statements
+    - name: Detect open() statements
       run: |
         if grep -rn "with open" --include='*.py' .; then
           echo "logging into file statements found!"
