@@ -2,13 +2,8 @@ name: Detect Logging in Custom Extractor
 
 on:
   pull_request:
-    branches: ["master", "main"]
-    paths:
-      - 'house-spiders/**'
-  # push:
-  #   branches: ["master", "main"]
-  #   paths:
-  #     - 'house-spiders/**'
+    branches: [ "main" ]
+
 jobs:
   detect-logging:
     runs-on: ubuntu-latest
