@@ -1,4 +1,5 @@
 def housespider():
     return "housespiders"
 
-print("HOUSESPIDER")
+    with open('world.txt', 'w') as f:
+        f.write("WORLD")
